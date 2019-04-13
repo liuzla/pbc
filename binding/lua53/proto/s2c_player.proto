@@ -1,0 +1,29 @@
+// This is example
+package game;
+
+message Card {
+  required int32 id = 1;           // Unique ID number
+  required string name = 2;
+  required int32 level = 3;
+}
+
+message s2c_player_base {
+  required string account = 1;
+  required int32 channel = 2;       
+  required int32 pid = 3;           // Unique ID number
+  optional string name = 4;
+  enum PhoneType {
+    MOBILE = 0;
+    HOME = 1;
+    WORK = 2;
+  }
+
+  message PhoneNumber {
+    required string number = 1;
+    optional PhoneType type = 2 [default = HOME];
+  }
+
+  repeated PhoneNumber phone = 5;
+  optional int32 level = 6;
+  repeated Card cards = 7;         
+}

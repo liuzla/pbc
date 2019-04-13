@@ -1,0 +1,11 @@
+// This is example
+
+package game;
+
+message c2s_change_name {
+  optional string name = 1;
+}
+
+message c2s_get_card_info {
+  optional int32 id = 1;
+}
